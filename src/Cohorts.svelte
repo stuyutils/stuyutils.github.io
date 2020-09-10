@@ -1,12 +1,21 @@
 <script lang="ts">
 	let query: string;
   
-	import cohorts2021 from "./cohorts";
-	let cohortMap = new Map<string, string>();
+	interface CohortInfo {
+		cohort: string,
+		choice: string,
+	}
+
+	import cohorts2021, {date} from "./cohorts.20200910";
+	let cohortMap = new Map<string, CohortInfo>();
 	for (let row of cohorts2021) {
 	  let osis = row[0];
-	  let cohort = row[2];
-	  cohortMap.set(osis, cohort);
+
+	  let info: CohortInfo = {
+		choice: row[1],
+		cohort: row[2],
+	  }
+	  cohortMap.set(osis, info);
 	}
   
 	$: lookupResult = cohortMap.get(query);
@@ -60,11 +69,13 @@
   
   <main>
 	<h1>Hello Stuy!</h1>
-	<p>[UNOFFICIAL] Get your cohort for 2020-2021. From data published on 2020/8/31.</p>
+	<p>[UNOFFICIAL] Get your cohort for 2020-2021. Lasted updated with official data on {date.getFullYear()}-{date.getMonth()+1}-{date.getDay()}.</p>
 	<input type="text" placeholder="Your OSIS here" bind:value={query} />
 	<section>
 	  {#if lookupResult}
-		<code>Your group is: <span>{lookupResult}</span></code>
+		<code>Your group is: <span>{lookupResult.cohort}</span></code>
+		<br>
+		<code>Your survey choice was: <span>{lookupResult.choice}</span></code>
 	  {:else}
 		<p>OSIS not found</p>
 	  {/if}
