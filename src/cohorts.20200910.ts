@@ -1,4 +1,4 @@
-const cohorts2021: string[][] = [
+const cohorts20200910: string[][] = [
     ['100667057', 'No Submission', 'A'],
     ['200050128', 'Remote', 'Remote'],
     ['200162410', 'No Submission', 'B'],
@@ -3373,6 +3373,10 @@ const cohorts2021: string[][] = [
     ['250414901', 'No Submission', 'B'],
     ['250418399', 'No Submission', 'B'],
     ['250420635', 'Blended', 'B'],
-    ['250420825', 'No Submission', 'D']];
+    ['250420825', 'No Submission', 'D'],
+];
 
-export default cohorts2021;
+export default cohorts20200910;
+
+export const date = new Date(2020, 8, 10);
+
