@@ -69,7 +69,7 @@
   
   <main>
 	<h1>Hello Stuy!</h1>
-	<p>[UNOFFICIAL] Get your cohort for 2020-2021. Lasted updated with official data on {date.getFullYear()}-{date.getMonth()+1}-{date.getDay()}.</p>
+	<p>[UNOFFICIAL] Get your cohort for 2020-2021. Lasted updated with official data on {date.getFullYear()}-{date.getMonth()+1}-{date.getDate()}.</p>
 	<input type="text" placeholder="Your OSIS here" bind:value={query} />
 	<section>
 	  {#if lookupResult}
