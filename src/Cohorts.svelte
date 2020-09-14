@@ -6,7 +6,7 @@
 		choice: string,
 	}
 
-	import cohorts2021, {date} from "./cohorts.20200910";
+	import cohorts2021, {date} from "./cohorts.20200914";
 	let cohortMap = new Map<string, CohortInfo>();
 	for (let row of cohorts2021) {
 	  let osis = row[0];
