@@ -37,6 +37,15 @@ To update data:
 - In the file, default export the cohorts array, which is in the format of: [['OSIS1', 'Survey Choice1', 'Group'], ['OSIS2', 'Survey Choice2', 'Group2'], ...];
 - Export current date with a Date object in a variable named ```date```.
 
+
+*\*Note that in JavaScript, Date object uses zero-indexed month, so*
+```javascript
+Date(2020, 8, 14);
+```
+*will construct a Date for September, 14, 2020.*
+
+
+
 - Inside src/Cohorts.svelte, import from your new file:
 ```javascript
 import cohorts2021, {date} from "./[your_file_here]";
